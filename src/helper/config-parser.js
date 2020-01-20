@@ -2,9 +2,9 @@ import React from "react";
 
 function configParser(config) {
   if (typeof config === "object") {
-    let childrens = [];
+    let children = [];
     if (config.Children) {
-      childrens = Object.entries(config.Children).map(c => configParser(c[1]));
+      children = Object.entries(config.Children).map(c => configParser(c[1]));
     }
 
     const element = React.createElement(
@@ -14,7 +14,7 @@ function configParser(config) {
         )
       ),
       config.Content.props || null,
-      ...childrens
+      ...children
     );
     return element;
   }

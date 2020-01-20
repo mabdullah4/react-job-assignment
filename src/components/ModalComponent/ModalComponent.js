@@ -10,7 +10,7 @@ const ModalComponent = ({ children, isOpen, width, height }) => {
   };
 
   const onChange = () => {
-    setModalOpen(ModalService._state.isOpen);
+    setModalOpen(ModalService.isOpen);
   };
 
   useEffect(() => {

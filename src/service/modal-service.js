@@ -1,18 +1,15 @@
 const ModalService = {
-  _state: {
-    isOpen: false
-  },
-
+	isOpen: false,
   setState(isOpen) {
-    this._state = { ...this._state, isOpen };
+    this.isOpen = isOpen ;
   },
 
   getState: function() {
-    return this._state;
+    return this.isOpen;
   },
 
   toggle: function() {
-    this._state.isOpen = !this._state.isOpen;
+    this.isOpen = !this.isOpen;
     this.onChange();
   },
 
