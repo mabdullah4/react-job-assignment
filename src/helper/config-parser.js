@@ -11,7 +11,9 @@ function configParser(config) {
       React.lazy(() =>
         import(
           `./../components/${config.Content.type}/${config.Content.type}.js`
-        )
+        ).catch(() => ({
+          default: () => <div>{config.Content.type} not found</div>
+        }))
       ),
       config.Content.props || null,
       ...children
